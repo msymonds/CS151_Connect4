@@ -1,3 +1,4 @@
+
 import java.util.HashSet;
 
 public class C4Controller {
@@ -6,7 +7,7 @@ public class C4Controller {
 	private C4GUI view;
 	private int currentPlayer = 1;
 	private Player[] turnOrder = new Player[(1+numPlayers)];	
-	private PlayerBase playerBase = PlayerBase.getPlayerBase();
+	
 	
 	
 	void attachView(C4GUI view) {
@@ -19,12 +20,7 @@ public class C4Controller {
 	public void establishPlayer(String name){
 		Player newPlayer = new Player(name);
 		if(currentPlayer == 1){
-			if(playerBase.contains(newPlayer)){
-				//Welcome player back
-			} else {
-				// Welcome Player!
-				playerBase.add(newPlayer);
-			}
+			
 			turnOrder[currentPlayer] = newPlayer;
 			view.getNextplayer(++currentPlayer);
 		} else {
@@ -36,12 +32,7 @@ public class C4Controller {
 			if(samePlayer > 0){
 				view.notifyBadName("Name already taken!! Please choose another.");
 			} else {
-				if(playerBase.contains(newPlayer)){
-					//Welcome player back
-				} else {
-					// Welcome Player!
-					playerBase.add(newPlayer);
-				}
+				
 				turnOrder[currentPlayer] = newPlayer;
 				if(currentPlayer == numPlayers){
 					currentPlayer = 1;
