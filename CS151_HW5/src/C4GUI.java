@@ -218,8 +218,16 @@ public class C4GUI extends Application{
 	    Label lScoreL = new Label();
 	    lScoreL.setText("" + player.getScore());
 	    lScoreL.setAlignment(Pos.CENTER);
+		
+	    Label lColorL = new Label();
+            if (playerNumber == 1)
+                lColorL.setText("RED TOKEN");
+            else if (playerNumber == 2)
+                lColorL.setText("YELLOW TOKEN");
+	    lColorL.setAlignment(Pos.CENTER);
 	    playerCard.setPrefWidth(Math.max((lNameL.getText().length()*5), (lPlayerL.getText().length()*5)) + 20);
-	    playerCard.getChildren().addAll(lPlayerL, lNameL, lScoreL);
+	    playerCard.getChildren().addAll(lPlayerL, lNameL, lScoreL, lColorL);
+
 	    playerCardPane.getChildren().add(playerCard);	
 	}
 	
