@@ -221,9 +221,9 @@ public class C4GUI extends Application{
 		
 	    Label lColorL = new Label();
             if (playerNumber == 1)
-                lColorL.setText("RED TOKEN");
+                lColorL.setText("RED");
             else if (playerNumber == 2)
-                lColorL.setText("YELLOW TOKEN");
+                lColorL.setText("YELLOW");
 	    lColorL.setAlignment(Pos.CENTER);
 	    playerCard.setPrefWidth(Math.max((lNameL.getText().length()*5), (lPlayerL.getText().length()*5)) + 20);
 	    playerCard.getChildren().addAll(lPlayerL, lNameL, lScoreL, lColorL);
