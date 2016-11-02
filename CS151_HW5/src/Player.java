@@ -1,7 +1,11 @@
+import javafx.scene.paint.Color;
+
+
 
 public class Player {
 	private String name = "";
 	private int score = 0;
+        private Color myColor = null;
 	
 	public Player(String name){
 		this.name = name;
@@ -31,6 +35,14 @@ public class Player {
 	public void decrementScore(){
 		if(score > 0)
 			score--;
+	}
+        
+        public Color getColor(){
+		return myColor;
+	}
+	
+	public void setColor(Color color){
+		myColor = color;
 	}
 	
 	@Override
