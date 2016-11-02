@@ -1,3 +1,4 @@
+
 import javafx.application.Application;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.geometry.HPos;
@@ -27,6 +28,7 @@ public class C4GUI extends Application{
 	// access and data assets
 	private C4Controller controller;
 	private Color[] colorPicker = new Color[] {null, Color.RED, Color.YELLOW};
+        private String[] ColorName = new String[] {null, "RED", "YELLOW"};
 	private Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
 	private double gameScreenHeight = primaryScreenBounds.getHeight()-50;
 	private double gameScreenWidth = ((gameScreenHeight/5) * 4);
@@ -54,7 +56,7 @@ public class C4GUI extends Application{
     private Label nameL = new Label("");
     private Label turnL = new Label("Turn!!");
     
-	public C4GUI(C4Controller controller) {
+    public C4GUI(C4Controller controller) {
         this.controller = controller;
         controller.attachView(this);
     }
@@ -209,25 +211,22 @@ public class C4GUI extends Application{
 	}
 	
 	public void addPlayerCard(Player player, int playerNumber){
-		VBox playerCard = new VBox();
-		playerCard.setAlignment(Pos.CENTER);
-		Label lPlayerL = new Label("Player " + playerNumber + ":");
+            VBox playerCard = new VBox();
+            playerCard.setAlignment(Pos.CENTER);
+            Label lPlayerL = new Label("Player " + playerNumber + ":");
 	    lPlayerL.setAlignment(Pos.CENTER);
 	    Label lNameL = new Label(player.getName());
 	    lNameL.setAlignment(Pos.CENTER);
 	    Label lScoreL = new Label();
 	    lScoreL.setText("" + player.getScore());
 	    lScoreL.setAlignment(Pos.CENTER);
-		
-	    Label lColorL = new Label();
-            if (playerNumber == 1)
-                lColorL.setText("RED");
-            else if (playerNumber == 2)
-                lColorL.setText("YELLOW");
+            Label lColorL = new Label();
+           
+            lColorL.setText("" + ColorName[playerNumber]);
+            
 	    lColorL.setAlignment(Pos.CENTER);
 	    playerCard.setPrefWidth(Math.max((lNameL.getText().length()*5), (lPlayerL.getText().length()*5)) + 20);
 	    playerCard.getChildren().addAll(lPlayerL, lNameL, lScoreL, lColorL);
-
 	    playerCardPane.getChildren().add(playerCard);	
 	}
 	
