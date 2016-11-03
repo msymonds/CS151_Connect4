@@ -107,6 +107,7 @@ public class C4GUI extends Application{
         status.setAlignment(Pos.CENTER);
         status.setVisible(false);
         playerCardPane.setAlignment(Pos.CENTER);
+        playerCardPane.setSpacing(50);
         statusPane.setAlignment(Pos.CENTER);
         statusPane.setPrefHeight(((gameScreenHeight - gameScreenWidth) / 5)*4);
         statusPane.getChildren().addAll(playerCardPane, status);
@@ -211,22 +212,17 @@ public class C4GUI extends Application{
 	}
 	
 	public void addPlayerCard(Player player, int playerNumber){
-            VBox playerCard = new VBox();
-            playerCard.setAlignment(Pos.CENTER);
-            Label lPlayerL = new Label("Player " + playerNumber + ":");
+        VBox playerCard = new VBox();
+        playerCard.setAlignment(Pos.CENTER);
+        Label lPlayerL = new Label("Player: " + ColorName[playerNumber]);
 	    lPlayerL.setAlignment(Pos.CENTER);
 	    Label lNameL = new Label(player.getName());
 	    lNameL.setAlignment(Pos.CENTER);
 	    Label lScoreL = new Label();
 	    lScoreL.setText("" + player.getScore());
 	    lScoreL.setAlignment(Pos.CENTER);
-            Label lColorL = new Label();
-           
-            lColorL.setText("" + ColorName[playerNumber]);
-            
-	    lColorL.setAlignment(Pos.CENTER);
 	    playerCard.setPrefWidth(Math.max((lNameL.getText().length()*5), (lPlayerL.getText().length()*5)) + 20);
-	    playerCard.getChildren().addAll(lPlayerL, lNameL, lScoreL, lColorL);
+	    playerCard.getChildren().addAll(lPlayerL, lNameL, lScoreL);
 	    playerCardPane.getChildren().add(playerCard);	
 	}
 	
