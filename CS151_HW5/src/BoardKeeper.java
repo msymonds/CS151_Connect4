@@ -1,3 +1,11 @@
+/*
+ *  Connect 4 Program
+ *  CS151, section 4
+ *  
+ *  Michael Symonds - 011078574
+ *  Michael Chen - 007230223
+ *  
+ */
 
 public class BoardKeeper {
 	private static Board gameBoard;
@@ -40,7 +48,7 @@ public class BoardKeeper {
 		return winner;
 	}
 	
-	static boolean checkVertical(int player){
+	private static boolean checkVertical(int player){
 		int[][] board = gameBoard.getBoard();
 		int dim = gameBoard.getBoardDim();
 		int numWin = gameBoard.getNumToWin();
@@ -60,7 +68,7 @@ public class BoardKeeper {
 		return false;
 	}
 	
-	static boolean checkHorizontal(int player){
+	private static boolean checkHorizontal(int player){
 		int[][] board = gameBoard.getBoard();
 		int dim = gameBoard.getBoardDim();
 		int numWin = gameBoard.getNumToWin();
@@ -80,7 +88,7 @@ public class BoardKeeper {
 		return false;
 	}
 	
-	static boolean checkDiagR(int player){
+	private static boolean checkDiagR(int player){
 		int[][] board = gameBoard.getBoard();
 		int dim = gameBoard.getBoardDim();
 		int numWin = gameBoard.getNumToWin();
@@ -100,7 +108,7 @@ public class BoardKeeper {
 		return false;
 	}
 	
-	static boolean checkDiagL(int player){
+	private static boolean checkDiagL(int player){
 		int[][] board = gameBoard.getBoard();
 		int dim = gameBoard.getBoardDim();
 		int numWin = gameBoard.getNumToWin();

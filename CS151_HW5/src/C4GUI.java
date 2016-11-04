@@ -1,4 +1,13 @@
 
+/*
+ *  Connect 4 Program
+ *  CS151, section 4
+ *  
+ *  Michael Symonds - 011078574
+ *  Michael Chen - 007230223
+ *  
+ */
+
 import javafx.application.Application;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.geometry.HPos;
@@ -28,7 +37,7 @@ public class C4GUI extends Application{
 	// access and data assets
 	private C4Controller controller;
 	private Color[] colorPicker = new Color[] {null, Color.RED, Color.YELLOW};
-        private String[] ColorName = new String[] {null, "RED", "YELLOW"};
+    private String[] ColorName = new String[] {null, "RED", "YELLOW"};
 	private Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
 	private double gameScreenHeight = primaryScreenBounds.getHeight()-50;
 	private double gameScreenWidth = ((gameScreenHeight/5) * 4);
@@ -63,7 +72,6 @@ public class C4GUI extends Application{
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		//System.out.println(controller.printBoard());
 		primaryStage.setTitle("Welcome to Connect " + controller.getNumWins() + "!!");
 		
 		// Title Panel

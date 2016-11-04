@@ -1,11 +1,17 @@
+/*
+ *  Connect 4 Program
+ *  CS151, section 4
+ *  
+ *  Michael Symonds - 011078574
+ *  Michael Chen - 007230223
+ *  
+ */
+
 import javafx.scene.paint.Color;
-
-
 
 public class Player {
 	private String name = "";
 	private int score = 0;
-        private Color myColor = null;
 	
 	public Player(String name){
 		this.name = name;
@@ -37,14 +43,6 @@ public class Player {
 			score--;
 	}
         
-        public Color getColor(){
-		return myColor;
-	}
-	
-	public void setColor(Color color){
-		myColor = color;
-	}
-	
 	@Override
     public boolean equals(Object o) {
 		if (this == o) return true;
