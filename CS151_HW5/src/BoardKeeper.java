@@ -10,19 +10,19 @@
 public class BoardKeeper {
 	private static Board gameBoard;
 	
-	static void setBoard(Board board){
+	public static void setBoard(Board board){
 		gameBoard = board;
 	}
 	
-	static int getNumWins(){
+	public static int getNumWins(){
 		return gameBoard.getNumToWin();
 	}
 	
-	static int getDim(){
+	public static int getDim(){
 		return gameBoard.getBoardDim();
 	}
 	
-	static int addMove(int column, int player){
+	public static int addMove(int column, int player){
 		int[][] board = gameBoard.getBoard();
 		
 		for(int i = (gameBoard.getBoardDim() - 1); i >= 0; i--){
